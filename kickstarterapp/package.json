@@ -1,0 +1,22 @@
+{
+  "name": "kickstarterapp",
+  "version": "1.0.0",
+  "description": "mean stack application",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose-title-case": "0.0.4",
+    "mongoose-validator": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "MEAN",
+    "stack"
+  ],
+  "author": "Swaraj Totey",
+  "license": "ISC"
+}

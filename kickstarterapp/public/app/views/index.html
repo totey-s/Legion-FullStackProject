@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/simple-sidebar.css">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,6 +33,7 @@
     <!-- Angular Controllers -->
     <script src="app/controllers/userController.js"></script>
     <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/managementCtrl.js"></script>
 
     <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
@@ -77,6 +79,9 @@
                         <a class="page-scroll" href="#" ng-click="main.logout();" ng-show="main.isLoggedIn">Logout</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="/management" ng-show="main.isLoggedIn && main.authored">Management</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="/profile" ng-show="main.isLoggedIn">Hi {{main.username}}</a>
                     </li>
                 </ul>
@@ -101,7 +106,7 @@
         </div>
     </header>
     
-    <div ng-view></div>
+    <div ng-view></div>   
 
     <!-- Footer -->
     <footer>

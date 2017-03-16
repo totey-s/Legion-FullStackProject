@@ -9,17 +9,38 @@ app.factory('User', function($http, AuthToken){
 			AuthToken.setToken(data.data.token);
 			return data;
 		});
-	}
+	};
 
 	//User.checkUsername(regData)
 	userFactory.checkUsername = function(regData){
 		return $http.post('/api/checkusername', regData);
-	}
+	};
 
 	//User.checkEmail(regData)
 	userFactory.checkEmail = function(regData){
 		return $http.post('/api/checkemail', regData);
-	}
+	};
+
+	userFactory.getPermission = function(){
+		return $http.get('/api/permission');
+	};
+
+	userFactory.getUsers = function(){
+		return $http.get('/api/management');
+	};
+
+	userFactory.getUser = function(id){
+		return $http.get('/api/edit/'+id);
+	};
+
+	userFactory.deleteUser = function(username){
+		return $http.delete('/api/management/'+username);
+	};
+
+	userFactory.editUser = function(id){
+		console.log("services: "+id);
+		return $http.put('/api/edit', id);
+	};
 
 	return userFactory;
 });

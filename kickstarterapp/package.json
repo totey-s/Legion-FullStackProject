@@ -6,7 +6,9 @@
   "dependencies": {
     "express": "^4.15.2",
     "mongoose-title-case": "0.0.4",
-    "mongoose-validator": "^1.2.5"
+    "mongoose-validator": "^1.2.5",
+    "nodemailer": "^3.1.5",
+    "nodemailer-sendgrid-transport": "^0.2.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -59,8 +59,12 @@ var UserSchema = new Schema({
   lname:{type:String, required: true, validate: nameValidator},
   username:{type:String, lowercase: true, required: true, unique: true, validate: usernameValidator},
   password:{type:String, required: true, validate: passwordValidator},
-  email:{type:String, required: true, lowercase: true, unique: true, validate: emailValidator}
+  email:{type:String, required: true, lowercase: true, unique: true, validate: emailValidator},
+  active:{type: Boolean, required: true, default: true},
+  permission:{type: String, required: true, default: 'user'}
 });
+
+//admin moderator user
 
 UserSchema.pre('save', function(next) {
   var user = this;

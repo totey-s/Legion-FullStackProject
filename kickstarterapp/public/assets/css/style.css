@@ -11,3 +11,12 @@ header .navbar{
 	-moz-animation:zoomIn 0.3s both ease;
 	animation:zoomIn 0.3s both ease;
 }
+
+.active{
+	text-decoration: none;
+    background-color: #eee;
+}
+
+.showmore{
+	display: inline: 
+}

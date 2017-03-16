@@ -8,6 +8,7 @@ app.controller('registerController', function($http, $location, $timeout, User){
 		appData.loading = true;
 		appData.errorMsg = false;
 		if(valid){
+			console.log(appData.regData);
 			User.create(appData.regData).then(function(data){
 				if(data.data.success){
 					appData.loading = false;
@@ -37,7 +38,7 @@ app.controller('registerController', function($http, $location, $timeout, User){
 		appData.usernameMsg = false;
 		appData.usernameInvalid = false;
 		User.checkUsername(appData.regData).then(function(data){
-			console.log(data);
+			//console.log(data);
 			if(data.data.success){
 				appData.checkingUsername = false;
 				appData.usernameInvalid = false;

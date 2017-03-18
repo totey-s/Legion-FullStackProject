@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">            
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="/profile">Profile</a></li>
+            <li><a href="/profile/yourprojects">Your Projects</a></li>
+            <li><a href="/profile/fundedprojects">Funded Projects</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-8">
+       		<h2>{{main.username}} Profile</h2>
+			<table class="table table-responsive">
+				<thead>
+					<tr>
+						<th>Username</th>
+						<th>Email</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{main.username}}</td>
+						<td>{{main.useremail}}</td>
+						<td>{{main.fname}}</td>
+						<td>{{main.lname}}</td>
+						<td>{{main.active}}</td>
+					</tr>
+				</tbody>
+			</table>   
+        </div>
+    </div>
+</div>  

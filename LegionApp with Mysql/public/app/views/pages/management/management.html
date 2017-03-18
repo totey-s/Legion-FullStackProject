@@ -1,0 +1,99 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+		    <div id="legend">
+		      <h3>User Management</h3>
+		    </div>
+		</div>
+		<div class="col-lg-6">
+		<!--  -->
+		<div ng-show="management.loading">
+		  <h4><span class='fa fa-circle-o-notch fa-spin'></span>&nbsp;&nbsp;Loading...</h4>
+		</div>
+		</div>
+	</div>
+
+	<br/>
+		
+		<div class="row">
+			<div class="showmore">
+				<div class="col-lg-6">
+					<div class="input-group">
+						<span class="input-group-addon">Results to display:</span>
+						<input type="text" class="form-control" ng-model="number">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<button type="button" ng-click="management.showMore(number);" class="btn btn-success">Apply Filter</button>
+				<button type="button" ng-click="management.showAll();" class="btn btn-warning">Show All</button>				
+			</div>	
+		</div>
+		
+		<br/>
+		<br/>
+
+		<div class="row show-hide-message" ng-show="management.showMoreError">
+			<div class="alert alert-danger">{{management.showMoreError}}</div>
+		</div>
+
+		<br/>
+		<br/>		
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Email</th>					
+					<th>Created On</th>
+					<th>Updated On</th>
+					<th>Status</th>
+					<th>Permission</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="person in management.users | limitTo: management.limit">
+					<td>{{person.firstname +" "+ person.lastname}}</td>
+					<td>{{person.username}}</td>
+					<td>{{person.email}}</td>					
+					<td>{{person.createdAt | date : "MMMM d, y h:mm a"}}</td>
+					<td>{{person.updatedAt | date : "MMMM d, y h:mm a"}}</td>
+					<td ng-if="person.active == true">Active</td>
+					<td ng-if="person.active == false">InActive</td>
+					<td>{{person.permission}}</td>
+					<td>
+						<a href="/edit/{{person.id}}"><button type="button" ng-show="management.editAccess" class="btn btn-primary">Edit</button></a>
+						<span ng-if="person.username != management.curUser">
+							<button type="button" ng-click="management.deleteUser(person.username)" ng-show="management.deleteAccess" class="btn btn-danger">Delete</button>
+						</span>						
+					</td>
+				</tr>
+				<tr></tr>	
+			</tbody>		
+		</table>
+
+		<br/>
+		<br/>
+
+		<div class="row">
+			<div class="showmore">
+				<div class="col-lg-6">
+					<div class="input-group">
+						<span class="input-group-addon">Results to display:</span>
+						<input type="text" class="form-control" ng-model="number">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<button type="button" ng-click="management.showMore(number);" class="btn btn-success">Apply Filter</button>
+				<button type="button" ng-click="management.showAll();" class="btn btn-warning">Show All</button>				
+			</div>	
+		</div>
+
+	<br/>
+
+	
+
+</div>

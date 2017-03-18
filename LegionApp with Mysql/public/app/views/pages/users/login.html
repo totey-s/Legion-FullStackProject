@@ -1,0 +1,54 @@
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-2">
+<form id="loginUser" class="form-horizontal" ng-submit="main.doLogin(loginData);">
+  <fieldset>
+    <div id="legend">
+      <h3>Login</h3>
+    </div>
+    <div>
+      <!-- Username -->
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" ng-model="main.loginData.username" placeholder="Please enter username" class="form-control">
+    </div>
+ 
+    <div>
+      <!-- Password-->
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ng-model="main.loginData.password" placeholder="Please enter password" class="form-control">      
+    </div>
+ 	<br/>
+
+   <div class="row">
+      <div class="col-lg-6">
+        <div class="control-group">
+          <!-- Button -->
+          <button type="submit" class="btn btn-success">Login</button>      
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!--  -->
+        <div ng-show="main.loading">
+          <h4><span class='fa fa-circle-o-notch fa-spin'></span>&nbsp;&nbsp;Loading...</h4>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+</div>
+</div>
+
+<br/>
+
+<div class="row show-hide-message" ng-show="main.successMsg">
+	<div class="alert alert-success">{{main.successMsg}}</div>
+</div>
+
+<br/>
+
+<div class="row show-hide-message" ng-show="main.errorMsg">
+	<div class="alert alert-danger">{{main.errorMsg}}</div>
+</div>
+
+</div>
